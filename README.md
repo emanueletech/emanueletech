@@ -1,5 +1,10 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg" />
+  <img src="assets/banner-light.svg" alt="Emanuele Tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
+</picture>
+
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00AE42&center=true&vCenter=true&width=640&lines=Hi%2C+I'm+Emanuele+%F0%9F%91%8B;3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00AE42&center=true&vCenter=true&width=640&lines=3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
 </p>
 
 <p align="center">
@@ -21,6 +26,12 @@ const emanuele = {
   printing: "Bambu Lab · MakerWorld creator",
 };
 ```
+
+### 📺 Latest videos
+
+<!-- YOUTUBE:START -->
+<p align="center"><a href="https://www.youtube.com/@emanuele_tech">Watch on YouTube</a></p>
+<!-- YOUTUBE:END -->
 
 ### 🛠️ Projects
 
@@ -48,6 +59,22 @@ My entry for GitHub Game Off 2026: a browser game, playable on itch.io.
 
 <p align="left">
   <img src="https://skillicons.dev/icons?i=js,ts,nodejs,python,swift,php,electron,html,css,docker,linux,git,github,vscode&perline=14" alt="Tech stack" />
+</p>
+
+### 📈 Stats
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg" />
+    <img src="assets/stats-light.svg" alt="GitHub stats and top languages" />
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
+    <img src="assets/snake-light.svg" alt="Contribution snake" />
+  </picture>
 </p>
 
 <p align="center"><sub>⭐ If one of my tools saves you time, a star helps other makers find it.</sub></p>
