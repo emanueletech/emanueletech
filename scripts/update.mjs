@@ -108,6 +108,27 @@ async function updateTeslers() {
   console.log(`articles: ${Math.min(items.length, MAX_ARTICLES)}`);
 }
 
+
+// Teslers.it badge in the same look as the shields.io "for-the-badge" ones, with the site's real favicon.
+const TESLERS_ICON = 'https://www.teslers.it/wp-content/uploads/2025/06/cropped-ispazio-2-192x192.jpg';
+
+export function teslersBadgeSvg(iconB64) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127" height="28" viewBox="0 0 127 28">
+  <clipPath id="ic"><rect x="9" y="7" width="14" height="14" rx="3" /></clipPath>
+  <rect width="127" height="28" fill="#CC0000" />
+  <image x="9" y="7" width="14" height="14" clip-path="url(#ic)" xlink:href="data:image/jpeg;base64,${iconB64}" href="data:image/jpeg;base64,${iconB64}" />
+  <text x="31" y="17.8" fill="#fff" font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="10" font-weight="700" letter-spacing="1.25">TESLERS.IT</text>
+</svg>`;
+}
+
+async function updateTeslersBadge() {
+  const res = await fetch(TESLERS_ICON, { headers: { 'User-Agent': `${USER}-profile-readme` } });
+  if (!res.ok) throw new Error(`Teslers icon HTTP ${res.status}`);
+  mkdirSync('assets', { recursive: true });
+  writeFileSync('assets/badge-teslers.svg', teslersBadgeSvg(Buffer.from(await res.arrayBuffer()).toString('base64')));
+  console.log('teslers badge written');
+}
+
 // ---------- Stats ----------
 async function gql(query) {
   const res = await fetch('https://api.github.com/graphql', {
@@ -216,7 +237,7 @@ async function updateStats() {
 
 if (process.argv[1] && process.argv[1].endsWith('update.mjs')) {
   // Each part fails independently so one broken source never blocks the other.
-  const jobs = [['videos', updateVideos], ['teslers', updateTeslers], ['stats', updateStats]];
+  const jobs = [['videos', updateVideos], ['teslers', updateTeslers], ['teslers-badge', updateTeslersBadge], ['stats', updateStats]];
   let failed = 0;
   for (const [name, fn] of jobs) {
     try { await fn(); } catch (e) { failed++; console.error(`${name} failed:`, e.message); }
