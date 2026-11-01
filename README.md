@@ -47,22 +47,11 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok"><img src="https://www.teslers.it/wp-content/uploads/2026/10/tesla-robotaxi-orari-2-notte-calm-mode-grok-600x338.jpg" alt="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y" /></a>
-      <br /><sub><a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok">Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y</a></sub>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi"><img src="https://www.teslers.it/wp-content/uploads/2026/11/tesla-cybercab-halloween-scheletri-featured-600x338.jpg" alt="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente" /></a>
-      <br /><sub><a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi">Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente</a></sub>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore"><img src="https://www.teslers.it/wp-content/uploads/2026/10/tesla-powerwall-heat-pump-optimization-600x338.jpg" alt="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno" /></a>
-      <br /><sub><a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore">Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno</a></sub>
-    </td>
-  </tr>
-</table>
+<p align="center">
+<a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok" title="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y"><img src="assets/teslers/14657.svg" width="32%" alt="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y" /></a>
+<a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi" title="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente"><img src="assets/teslers/14718.svg" width="32%" alt="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente" /></a>
+<a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore" title="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno"><img src="assets/teslers/14666.svg" width="32%" alt="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno" /></a>
+</p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
