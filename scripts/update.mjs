@@ -125,35 +125,45 @@ export function wrap(text, maxChars, maxLines) {
   return lines;
 }
 
-// Same anatomy as the cards on teslers.it: image, red category, bold title, avatar + date, comment box.
-export function articleCardSvg(a, imgB64, iconB64) {
-  const lines = wrap(a.title, 33, 3);
+// Same anatomy and proportions as the hero cards on teslers.it: each SVG carries its own slice of the
+// red band, so three of them side by side (no whitespace between) read as the site's hero row.
+export function articleCardSvg(a, imgB64, avatarB64, avatarMime = 'image/jpeg') {
+  const W = 400, M = 12, TOP = 28;               // card width, side gutter, band margin above/below
+  const P = 26, IMG_H = 225, H = 531;            // inner padding, cover height, card height
   const font = "'Poppins', 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif";
-  const titleSvg = lines.map((l, i) => `<text x="20" y="${284 + i * 25}" font-family="${font}" font-size="19" font-weight="700" fill="#111111">${esc(l)}</text>`).join('\n  ');
+  const lines = wrap(a.title, 28, 4);
+  const title = lines.map((l, i) => `<text x="${P}" y="${IMG_H + 77 + i * 30}" font-family="${font}" font-size="22.5" font-weight="700" letter-spacing="-0.3" fill="#1A1A1E">${esc(l)}</text>`).join('\n    ');
   const n = String(a.comments);
-  const boxW = 34 + n.length * 8;
-  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="410" viewBox="0 0 400 410">
+  const boxW = 42 + n.length * 9, boxH = 36, footY = 487;
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W + 2 * M}" height="${H + 2 * TOP}" viewBox="0 0 ${W + 2 * M} ${H + 2 * TOP}">
   <defs>
-    <clipPath id="av"><circle cx="31" cy="384" r="11" /></clipPath>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgb(220,39,67)" /><stop offset="1" stop-color="rgb(146,42,58)" />
+    </linearGradient>
+    <clipPath id="av"><circle cx="${P + 14}" cy="${footY}" r="14" /></clipPath>
   </defs>
-  <rect x="0.5" y="0.5" width="399" height="409" fill="#ffffff" stroke="#e5e7eb" />
-  <image x="0" y="0" width="400" height="225" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/jpeg;base64,${imgB64}" href="data:image/jpeg;base64,${imgB64}" />
-  <text x="20" y="252" font-family="${font}" font-size="11" font-weight="700" letter-spacing="1" fill="#E31937">${esc((a.category || 'Notizie').toUpperCase())}</text>
-  ${titleSvg}
-  <image x="20" y="373" width="22" height="22" clip-path="url(#av)" xlink:href="data:image/jpeg;base64,${iconB64}" href="data:image/jpeg;base64,${iconB64}" />
-  <text x="50" y="389" font-family="${font}" font-size="13" fill="#555555">${esc(dataIt(a.date))}</text>
-  <g transform="translate(${380 - boxW}, 372)">
-    <rect width="${boxW}" height="24" fill="#fdecef" />
-    <path d="M9 7.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-7l-3.5 3v-3H9A1.5 1.5 0 0 1 7.5 15V9A1.5 1.5 0 0 1 9 7.5z" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round" />
-    <text x="27" y="16.5" font-family="${font}" font-size="12" fill="#333333">${n}</text>
+  <rect width="${W + 2 * M}" height="${H + 2 * TOP}" fill="url(#band)" />
+  <g transform="translate(${M}, ${TOP})">
+    <rect width="${W}" height="${H}" fill="#ffffff" />
+    <image width="${W}" height="${IMG_H}" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/jpeg;base64,${imgB64}" href="data:image/jpeg;base64,${imgB64}" />
+    <text x="${P}" y="${IMG_H + 38}" font-family="${font}" font-size="14" font-weight="700" letter-spacing="1.4" fill="#E51837">${esc((a.category || 'Notizie').toUpperCase())}</text>
+    ${title}
+    <image x="${P}" y="${footY - 14}" width="28" height="28" clip-path="url(#av)" xlink:href="data:${avatarMime};base64,${avatarB64}" href="data:${avatarMime};base64,${avatarB64}" />
+    <text x="${P + 38}" y="${footY + 6}" font-family="${font}" font-size="17" fill="#555555">${esc(dataIt(a.date))}</text>
+    <g transform="translate(${W - P - boxW}, ${footY - boxH / 2})">
+      <rect width="${boxW}" height="${boxH}" fill="#FDEDEF" />
+      <path d="M11 10.5h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-9.5l-4.5 4v-4H11a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z" fill="none" stroke="#1A1A1E" stroke-width="1.8" stroke-linejoin="round" />
+      <text x="34" y="24" font-family="${font}" font-size="17" fill="#1A1A1E">${n}</text>
+    </g>
   </g>
 </svg>`;
 }
 
 export function articlesHtml(items) {
+  // No whitespace between the links: GitHub would render it as gaps in the red band.
   const cells = items.slice(0, MAX_ARTICLES).map((a) =>
-    `<a href="${esc(a.link)}" title="${esc(a.title)}"><img src="assets/teslers/${a.id}.svg" width="32%" alt="${esc(a.title)}" /></a>`);
-  return `<p align="center">\n${cells.join('\n')}\n</p>`;
+    `<a href="${esc(a.link)}" title="${esc(a.title)}"><img src="assets/teslers/${a.id}.svg" width="33%" alt="${esc(a.title)}" /></a>`);
+  return `<p align="center">${cells.join('')}</p>`;
 }
 
 const UA = { headers: { 'User-Agent': `${USER}-profile-readme` } };
@@ -172,10 +182,18 @@ async function updateTeslers() {
   mkdirSync('assets/teslers', { recursive: true });
   const keep = new Set();
   for (const a of items) {
-    // The 432x243 crop is a fraction of the weight of the 600px one and plenty for a 400px card.
-    const small = a.image.replace(/-\d+x\d+(\.\w+)$/, '-432x243$1');
-    const img = await getB64(small).catch(() => getB64(a.image));
-    writeFileSync(`assets/teslers/${a.id}.svg`, articleCardSvg(a, img, icon));
+    const img = await getB64(a.image);
+    // Author avatar from the WordPress REST API, like on the site; the Teslers icon if unavailable.
+    let avatar = icon, mime = 'image/jpeg';
+    try {
+      const r = await fetch(`https://www.teslers.it/wp-json/wp/v2/posts/${a.id}?_embed=author`, UA);
+      const url = (await r.json())._embedded?.author?.[0]?.avatar_urls?.['96'];
+      if (url) {
+        const ar = await fetch(url, UA);
+        if (ar.ok) { mime = (ar.headers.get('content-type') || 'image/jpeg').split(';')[0]; avatar = Buffer.from(await ar.arrayBuffer()).toString('base64'); }
+      }
+    } catch (e) { console.log(`avatar ${a.id}: ${e.message}`); }
+    writeFileSync(`assets/teslers/${a.id}.svg`, articleCardSvg(a, img, avatar, mime));
     keep.add(`${a.id}.svg`);
   }
   for (const f of readdirSync('assets/teslers')) if (!keep.has(f)) unlinkSync(`assets/teslers/${f}`);
