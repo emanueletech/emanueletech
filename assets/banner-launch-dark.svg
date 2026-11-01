@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117" /><stop offset="1" stop-color="#0f2a1a" />
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#1f2937" stroke-width="1" />
+    </pattern>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3b0" /><stop offset="0.45" stop-color="#ffb020" /><stop offset="1" stop-color="#ff4d1a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .layer { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation-duration: 8.45s; animation-timing-function: linear; animation-iteration-count: infinite; }
+    @keyframes l0 { 0%, 0.000% { transform: scaleX(0); } 2.959%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l1 { 0%, 2.367% { transform: scaleX(0); } 5.325%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l2 { 0%, 4.734% { transform: scaleX(0); } 7.692%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l3 { 0%, 7.101% { transform: scaleX(0); } 10.059%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l4 { 0%, 9.467% { transform: scaleX(0); } 12.426%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l5 { 0%, 11.834% { transform: scaleX(0); } 14.793%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l6 { 0%, 14.201% { transform: scaleX(0); } 17.160%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l7 { 0%, 16.568% { transform: scaleX(0); } 19.527%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l8 { 0%, 18.935% { transform: scaleX(0); } 21.893%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l9 { 0%, 21.302% { transform: scaleX(0); } 24.260%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l10 { 0%, 23.669% { transform: scaleX(0); } 26.627%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l11 { 0%, 26.036% { transform: scaleX(0); } 28.994%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l12 { 0%, 28.402% { transform: scaleX(0); } 31.361%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l13 { 0%, 30.769% { transform: scaleX(0); } 33.728%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l14 { 0%, 33.136% { transform: scaleX(0); } 36.095%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l15 { 0%, 35.503% { transform: scaleX(0); } 38.462%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l16 { 0%, 37.870% { transform: scaleX(0); } 40.828%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l17 { 0%, 40.237% { transform: scaleX(0); } 43.195%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l18 { 0%, 42.604% { transform: scaleX(0); } 45.562%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l19 { 0%, 44.970% { transform: scaleX(0); } 47.929%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l20 { 0%, 47.337% { transform: scaleX(0); } 50.296%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l21 { 0%, 49.704% { transform: scaleX(0); } 52.663%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l22 { 0%, 52.071% { transform: scaleX(0); } 55.030%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    @keyframes l23 { 0%, 54.438% { transform: scaleX(0); } 57.396%, 89.349% { transform: scaleX(1); } 89.467%, 100% { transform: scaleX(0); } }
+    .head { animation: head 8.45s ease-in-out infinite; }
+    @keyframes head { 0.000% { transform: translateX(-62px); } 8.284% { transform: translateX(62px); } 16.568% { transform: translateX(-62px); } 24.852% { transform: translateX(62px); } 33.136% { transform: translateX(-62px); } 41.420% { transform: translateX(62px); } 49.704% { transform: translateX(-62px); } 63.314%, 92.899% { transform: translateX(78px); } 100% { transform: translateX(-62px); } }
+    .window { opacity: 0; animation: window 8.45s linear infinite; }
+    @keyframes window { 0%, 59.763% { opacity: 0; } 63.314%, 89.349% { opacity: 1; } 89.467%, 100% { opacity: 0; } }
+    .rocket { animation: lift 8.45s infinite; }
+    @keyframes lift {
+      0%, 69.231% { transform: translateY(0); animation-timing-function: cubic-bezier(.55,0,.9,.6); }
+      88.166%, 89.349% { transform: translateY(-300px); }
+      89.467%, 100% { transform: translateY(0); }
+    }
+    .flame { opacity: 0; transform-box: fill-box; transform-origin: center top;
+             animation: flame 8.45s linear infinite, flicker 0.12s linear infinite alternate; }
+    @keyframes flame { 0%, 65.680% { opacity: 0; } 67.456%, 89.349% { opacity: 1; } 89.467%, 100% { opacity: 0; } }
+    @keyframes flicker { from { transform: scaleY(0.85) scaleX(0.95); } to { transform: scaleY(1.2) scaleX(1.05); } }
+    .smoke { opacity: 0; transform-box: fill-box; transform-origin: center; animation: smoke 8.45s ease-out infinite; }
+    @keyframes smoke { 0%, 69.231% { opacity: 0; transform: scale(0.3); } 72.781% { opacity: 0.55; } 91.716% { opacity: 0; transform: scale(1.6); } 100% { opacity: 0; transform: scale(0.3); } }
+    .blink { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+  <rect width="1200" height="280" rx="14" fill="url(#bg)" />
+  <rect width="1200" height="280" rx="14" fill="url(#grid)" opacity="0.6" />
+
+  <text x="70" y="118" font-size="64" font-weight="800" fill="#ffffff">Emanuele Tech</text>
+  <text x="72" y="160" font-size="22" fill="#9ca3af">3D printing · Digital innovation &amp; AI · Electric vehicles</text>
+  <text x="72" y="214" font-size="18" font-family="ui-monospace, 'Fira Code', Menlo, monospace" fill="#00d455">$ make things --open-source<tspan class="blink">▌</tspan></text>
+
+  <!-- printer frame -->
+  <g stroke="#374151" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M900 250 V40 H1120 V250" />
+    <path d="M890 250 H1130" />
+  </g>
+  <line x1="900" y1="70" x2="1120" y2="70" stroke="#374151" stroke-width="3" />
+  <rect x="920" y="240" width="180" height="6" rx="3" fill="#374151" />
+
+  <!-- launch smoke on the bed -->
+  <g fill="#9ca3af">
+    <circle class="smoke" cx="976" cy="232" r="12" />
+    <circle class="smoke" cx="1044" cy="232" r="12" />
+    <circle class="smoke" cx="992" cy="226" r="9" />
+    <circle class="smoke" cx="1028" cy="226" r="9" />
+  </g>
+
+  <!-- the printed rocket: layers, window, engine on, then it flies out of the banner; loops forever -->
+  <g class="rocket">
+    <g class="flame">
+      <path d="M997 236 Q1010 276 1023 236 Z" fill="url(#flame)" />
+      <path d="M1003 236 Q1010 260 1017 236 Z" fill="#fffbe6" />
+    </g>
+    <g>
+      <g class="layer" style="animation-name:l0"><rect x="999" y="232" width="22" height="4" fill="#374151" /></g>
+      <g class="layer" style="animation-name:l1"><rect x="997" y="227" width="26" height="4" fill="#374151" /></g>
+      <g class="layer" style="animation-name:l2"><rect x="992" y="222" width="36" height="4" fill="#00a844" /><rect x="968" y="222" width="24" height="4" fill="#00a844" /><rect x="1028" y="222" width="24" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l3"><rect x="992" y="217" width="36" height="4" fill="#00a844" /><rect x="970" y="217" width="22" height="4" fill="#00a844" /><rect x="1028" y="217" width="22" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l4"><rect x="992" y="212" width="36" height="4" fill="#00a844" /><rect x="973" y="212" width="19" height="4" fill="#00a844" /><rect x="1028" y="212" width="19" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l5"><rect x="992" y="207" width="36" height="4" fill="#00a844" /><rect x="977" y="207" width="15" height="4" fill="#00a844" /><rect x="1028" y="207" width="15" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l6"><rect x="992" y="202" width="36" height="4" fill="#00a844" /><rect x="982" y="202" width="10" height="4" fill="#00a844" /><rect x="1028" y="202" width="10" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l7"><rect x="992" y="197" width="36" height="4" fill="#00a844" /><rect x="987" y="197" width="5" height="4" fill="#00a844" /><rect x="1028" y="197" width="5" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l8"><rect x="992" y="192" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l9"><rect x="992" y="187" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l10"><rect x="992" y="182" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l11"><rect x="992" y="177" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l12"><rect x="992" y="172" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l13"><rect x="992" y="167" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l14"><rect x="992" y="162" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l15"><rect x="992" y="157" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l16"><rect x="992" y="152" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l17"><rect x="992" y="147" width="36" height="4" fill="#00d455" /></g>
+      <g class="layer" style="animation-name:l18"><rect x="993" y="142" width="34" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l19"><rect x="995" y="137" width="30" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l20"><rect x="997.5" y="132" width="25" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l21"><rect x="1000.5" y="127" width="19" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l22"><rect x="1004" y="122" width="12" height="4" fill="#00a844" /></g>
+      <g class="layer" style="animation-name:l23"><rect x="1007.5" y="117" width="5" height="4" fill="#00a844" /></g>
+    </g>
+    <circle class="window" cx="1010" cy="169" r="9" fill="#0d1117" stroke="#00a844" stroke-width="3" />
+    <circle class="window" cx="1007" cy="166" r="3" fill="#ffffff" fill-opacity="0.6" />
+  </g>
+
+  <g class="head">
+    <rect x="985" y="58" width="50" height="34" rx="5" fill="#374151" />
+    <path d="M1002 92 h16 l-8 14 z" fill="#00d455" />
+  </g>
+</svg>
