@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg" />
-  <img src="assets/banner-light.svg" alt="Emanuele Tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-rocket-dark.svg" />
+  <img src="assets/banner-rocket-light.svg" alt="Emanuele Tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
 </picture>
 
 <p align="center">
@@ -32,14 +32,7 @@ const emanuele = {
 ### 📺 Latest videos
 
 <!-- YOUTUBE:START -->
-<p align="center">
-<a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
-<a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
-<a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
-<a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk-32e6dd16.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
-<a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="assets/videos/2Rz5EJSSzvA-2b81747c.svg" width="32%" alt="3D-Printing Spider-Man" /></a>
-<a href="https://www.youtube.com/watch?v=mz2Ym5uObqw" title="3D-Printing Hyper Hopper"><img src="assets/videos/mz2Ym5uObqw-1939a717.svg" width="32%" alt="3D-Printing Hyper Hopper" /></a>
-</p>
+<p align="center"><a href="https://www.youtube.com/@emanuele_tech">Watch on YouTube</a></p>
 <!-- YOUTUBE:END -->
 
 ### 📰 Latest on [Teslers.it](https://www.teslers.it)
@@ -47,7 +40,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok" title="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y"><img src="assets/teslers/14657-6717cbc5.svg" width="33%" alt="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y" /></a><a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi" title="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente"><img src="assets/teslers/14718-7edf79ae.svg" width="33%" alt="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente" /></a><a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore" title="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno"><img src="assets/teslers/14666-3f09f394.svg" width="33%" alt="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno" /></a></p>
+<p><a href="https://www.teslers.it">Read the latest news on Teslers.it</a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
