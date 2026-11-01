@@ -81,33 +81,108 @@ async function updateVideos() {
 }
 
 // ---------- Teslers.it ----------
+const decodeEntities = (s) => unxml(s)
+  .replace(/&#8217;/g, '’').replace(/&#8216;/g, '‘').replace(/&#8220;/g, '“').replace(/&#8221;/g, '”')
+  .replace(/&#8211;/g, '–').replace(/&#8230;/g, '…').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
+const cdata = (s) => (s || '').replace(/^<!\[CDATA\[|\]\]>$/g, '').trim();
+
 export function parseRss(xml) {
-  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, e]) => ({
-    title: unxml((e.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '')
-      .replace(/&#8217;/g, '’').replace(/&#8216;/g, '‘').replace(/&#8220;/g, '“').replace(/&#8221;/g, '”').replace(/&#8211;/g, '–').replace(/&#8230;/g, '…').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)),
-    link: ((e.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || '').trim(),
-    image: (e.match(/<media:content url="([^"]+)"/) || [])[1],
-  })).filter((a) => a.link.startsWith('https://www.teslers.it/') && a.image);
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, e]) => {
+    const link = ((e.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || '').trim();
+    return {
+      id: (link.match(/teslers\.it\/(\d+)\//) || [])[1],
+      title: decodeEntities((e.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || ''),
+      link,
+      image: (e.match(/<media:content url="([^"]+)"/) || [])[1],
+      category: decodeEntities(cdata((e.match(/<category>([\s\S]*?)<\/category>/) || [])[1])),
+      date: new Date((e.match(/<pubDate>([^<]+)<\/pubDate>/) || [])[1]),
+      comments: +((e.match(/<slash:comments>(\d+)<\/slash:comments>/) || [])[1] || 0),
+    };
+  }).filter((a) => a.id && a.link.startsWith('https://www.teslers.it/') && a.image);
+}
+
+const MESI = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+const dataIt = (d) => {
+  const r = new Date(d.toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
+  return `${r.getDate()} ${MESI[r.getMonth()]} ${r.getFullYear()}`;
+};
+
+// Greedy word wrap on an estimated character budget (SVG has no automatic wrapping).
+export function wrap(text, maxChars, maxLines) {
+  const lines = [];
+  let cur = '';
+  for (const w of text.split(/\s+/)) {
+    if (!cur) cur = w;
+    else if ((cur + ' ' + w).length <= maxChars) cur += ' ' + w;
+    else { lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) {
+    const kept = lines.slice(0, maxLines);
+    kept[maxLines - 1] = kept[maxLines - 1].replace(/[\s,.:;]*$/, '') + '…';
+    return kept;
+  }
+  return lines;
+}
+
+// Same anatomy as the cards on teslers.it: image, red category, bold title, avatar + date, comment box.
+export function articleCardSvg(a, imgB64, iconB64) {
+  const lines = wrap(a.title, 33, 3);
+  const font = "'Poppins', 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif";
+  const titleSvg = lines.map((l, i) => `<text x="20" y="${284 + i * 25}" font-family="${font}" font-size="19" font-weight="700" fill="#111111">${esc(l)}</text>`).join('\n  ');
+  const n = String(a.comments);
+  const boxW = 34 + n.length * 8;
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="410" viewBox="0 0 400 410">
+  <defs>
+    <clipPath id="av"><circle cx="31" cy="384" r="11" /></clipPath>
+  </defs>
+  <rect x="0.5" y="0.5" width="399" height="409" fill="#ffffff" stroke="#e5e7eb" />
+  <image x="0" y="0" width="400" height="225" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/jpeg;base64,${imgB64}" href="data:image/jpeg;base64,${imgB64}" />
+  <text x="20" y="252" font-family="${font}" font-size="11" font-weight="700" letter-spacing="1" fill="#E31937">${esc((a.category || 'Notizie').toUpperCase())}</text>
+  ${titleSvg}
+  <image x="20" y="373" width="22" height="22" clip-path="url(#av)" xlink:href="data:image/jpeg;base64,${iconB64}" href="data:image/jpeg;base64,${iconB64}" />
+  <text x="50" y="389" font-family="${font}" font-size="13" fill="#555555">${esc(dataIt(a.date))}</text>
+  <g transform="translate(${380 - boxW}, 372)">
+    <rect width="${boxW}" height="24" fill="#fdecef" />
+    <path d="M9 7.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-7l-3.5 3v-3H9A1.5 1.5 0 0 1 7.5 15V9A1.5 1.5 0 0 1 9 7.5z" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round" />
+    <text x="27" y="16.5" font-family="${font}" font-size="12" fill="#333333">${n}</text>
+  </g>
+</svg>`;
 }
 
 export function articlesHtml(items) {
-  const cells = items.slice(0, MAX_ARTICLES).map((a) => `    <td width="33%" valign="top">
-      <a href="${esc(a.link)}"><img src="${esc(a.image)}" alt="${esc(a.title)}" /></a>
-      <br /><sub><a href="${esc(a.link)}">${esc(a.title)}</a></sub>
-    </td>`);
-  return `<table>\n  <tr>\n${cells.join('\n')}\n  </tr>\n</table>`;
+  const cells = items.slice(0, MAX_ARTICLES).map((a) =>
+    `<a href="${esc(a.link)}" title="${esc(a.title)}"><img src="assets/teslers/${a.id}.svg" width="32%" alt="${esc(a.title)}" /></a>`);
+  return `<p align="center">\n${cells.join('\n')}\n</p>`;
+}
+
+const UA = { headers: { 'User-Agent': `${USER}-profile-readme` } };
+async function getB64(url) {
+  const r = await fetch(url, UA);
+  if (!r.ok) throw new Error(`${url} HTTP ${r.status}`);
+  return Buffer.from(await r.arrayBuffer()).toString('base64');
 }
 
 async function updateTeslers() {
-  const res = await fetch(TESLERS_FEED, { headers: { 'User-Agent': `${USER}-profile-readme` } });
+  const res = await fetch(TESLERS_FEED, UA);
   if (!res.ok) throw new Error(`Teslers feed HTTP ${res.status}`);
-  const items = parseRss(await res.text());
+  const items = parseRss(await res.text()).slice(0, MAX_ARTICLES);
   if (!items.length) throw new Error('Teslers feed empty');
+  const icon = await getB64(TESLERS_ICON);
+  mkdirSync('assets/teslers', { recursive: true });
+  const keep = new Set();
+  for (const a of items) {
+    // The 432x243 crop is a fraction of the weight of the 600px one and plenty for a 400px card.
+    const small = a.image.replace(/-\d+x\d+(\.\w+)$/, '-432x243$1');
+    const img = await getB64(small).catch(() => getB64(a.image));
+    writeFileSync(`assets/teslers/${a.id}.svg`, articleCardSvg(a, img, icon));
+    keep.add(`${a.id}.svg`);
+  }
+  for (const f of readdirSync('assets/teslers')) if (!keep.has(f)) unlinkSync(`assets/teslers/${f}`);
   const md = readFileSync('README.md', 'utf8');
   writeFileSync('README.md', replaceSection(md, 'TESLERS', articlesHtml(items)));
-  console.log(`articles: ${Math.min(items.length, MAX_ARTICLES)}`);
+  console.log(`articles: ${items.length}`);
 }
-
 
 // Teslers.it badge in the same look as the shields.io "for-the-badge" ones, with the site's real favicon.
 const TESLERS_ICON = 'https://www.teslers.it/wp-content/uploads/2025/06/cropped-ispazio-2-192x192.jpg';
