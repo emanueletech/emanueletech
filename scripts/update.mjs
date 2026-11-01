@@ -1,6 +1,11 @@
 // Daily profile refresh: latest YouTube videos and Teslers.it articles in README + self-generated stats cards.
 // Runs in GitHub Actions (Node 20+, global fetch). No third-party services.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+
+// File names carry a hash of the content: GitHub's image proxy caches by URL, so a changed card
+// (new comment count, restyle) must get a new URL to show up.
+const hashed = (id, svg) => `${id}-${createHash('sha1').update(svg).digest('hex').slice(0, 8)}.svg`;
 
 const USER = 'emanueletech';
 const YT_CHANNEL = 'UCauQaWv5nr5VdkDjXDmhskg';
@@ -49,7 +54,7 @@ export function videoCardSvg(v, jpegB64) {
 
 export function videosHtml(videos) {
   const cells = videos.slice(0, MAX_VIDEOS).map((v) =>
-    `<a href="https://www.youtube.com/watch?v=${v.id}" title="${esc(v.title)}"><img src="assets/videos/${v.id}.svg" width="32%" alt="${esc(v.title)}" /></a>`);
+    `<a href="https://www.youtube.com/watch?v=${v.id}" title="${esc(v.title)}"><img src="assets/videos/${v.file}" width="32%" alt="${esc(v.title)}" /></a>`);
   return `<p align="center">\n${cells.join('\n')}\n</p>`;
 }
 
@@ -70,8 +75,10 @@ async function updateVideos() {
     const img = await fetch(`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`);
     if (!img.ok) throw new Error(`thumbnail ${v.id} HTTP ${img.status}`);
     const b64 = Buffer.from(await img.arrayBuffer()).toString('base64');
-    writeFileSync(`assets/videos/${v.id}.svg`, videoCardSvg(v, b64));
-    keep.add(`${v.id}.svg`);
+    const svg = videoCardSvg(v, b64);
+    v.file = hashed(v.id, svg);
+    writeFileSync(`assets/videos/${v.file}`, svg);
+    keep.add(v.file);
   }
   // Files are named by video id, so a new video is a new URL and never a stale cached image.
   for (const f of readdirSync('assets/videos')) if (!keep.has(f)) unlinkSync(`assets/videos/${f}`);
@@ -162,7 +169,7 @@ export function articleCardSvg(a, imgB64, avatarB64, avatarMime = 'image/jpeg') 
 export function articlesHtml(items) {
   // No whitespace between the links: GitHub would render it as gaps in the red band.
   const cells = items.slice(0, MAX_ARTICLES).map((a) =>
-    `<a href="${esc(a.link)}" title="${esc(a.title)}"><img src="assets/teslers/${a.id}.svg" width="33%" alt="${esc(a.title)}" /></a>`);
+    `<a href="${esc(a.link)}" title="${esc(a.title)}"><img src="assets/teslers/${a.file}" width="33%" alt="${esc(a.title)}" /></a>`);
   return `<p align="center">${cells.join('')}</p>`;
 }
 
@@ -193,8 +200,10 @@ async function updateTeslers() {
         if (ar.ok) { mime = (ar.headers.get('content-type') || 'image/jpeg').split(';')[0]; avatar = Buffer.from(await ar.arrayBuffer()).toString('base64'); }
       }
     } catch (e) { console.log(`avatar ${a.id}: ${e.message}`); }
-    writeFileSync(`assets/teslers/${a.id}.svg`, articleCardSvg(a, img, avatar, mime));
-    keep.add(`${a.id}.svg`);
+    const svg = articleCardSvg(a, img, avatar, mime);
+    a.file = hashed(a.id, svg);
+    writeFileSync(`assets/teslers/${a.file}`, svg);
+    keep.add(a.file);
   }
   for (const f of readdirSync('assets/teslers')) if (!keep.has(f)) unlinkSync(`assets/teslers/${f}`);
   const md = readFileSync('README.md', 'utf8');
