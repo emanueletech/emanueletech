@@ -1,10 +1,12 @@
-// Daily profile refresh: latest YouTube videos in README + self-generated stats cards.
+// Daily profile refresh: latest YouTube videos and Teslers.it articles in README + self-generated stats cards.
 // Runs in GitHub Actions (Node 20+, global fetch). No third-party services.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 
 const USER = 'emanueletech';
 const YT_CHANNEL = 'UCauQaWv5nr5VdkDjXDmhskg';
 const MAX_VIDEOS = 6;
+const MAX_ARTICLES = 3;
+const TESLERS_FEED = 'https://www.teslers.it/feed';
 const token = process.env.GITHUB_TOKEN;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -18,9 +20,36 @@ export function parseFeed(xml) {
   })).filter((v) => v.id);
 }
 
+// Thumbnail + play button + title, as one SVG card. The JPEG is embedded, so the card
+// is a single file in the repo and the click still goes to YouTube (views count there).
+export function videoCardSvg(v, jpegB64) {
+  const title = v.title.length > 38 ? v.title.slice(0, 37).trimEnd() + '…' : v.title;
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="180" viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0" /><stop offset="1" stop-color="#000" stop-opacity="0.85" />
+    </linearGradient>
+    <clipPath id="r"><rect width="320" height="180" rx="10" /></clipPath>
+  </defs>
+  <style>
+    .play { transform-origin: 160px 82px; animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { transform: scale(1.08); } }
+  </style>
+  <g clip-path="url(#r)">
+    <image width="320" height="180" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/jpeg;base64,${jpegB64}" href="data:image/jpeg;base64,${jpegB64}" />
+    <rect width="320" height="180" fill="url(#fade)" />
+  </g>
+  <g class="play">
+    <rect x="136" y="65" width="48" height="34" rx="9" fill="#FF0000" />
+    <path d="M154 73 L169 82 L154 91 Z" fill="#fff" />
+  </g>
+  <text x="12" y="166" font-family="'Segoe UI', Ubuntu, Arial, sans-serif" font-size="13" font-weight="600" fill="#fff">${esc(title)}</text>
+</svg>`;
+}
+
 export function videosHtml(videos) {
   const cells = videos.slice(0, MAX_VIDEOS).map((v) =>
-    `<a href="https://www.youtube.com/watch?v=${v.id}" title="${esc(v.title)}"><img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" width="32%" alt="${esc(v.title)}" /></a>`);
+    `<a href="https://www.youtube.com/watch?v=${v.id}" title="${esc(v.title)}"><img src="assets/videos/${v.id}.svg" width="32%" alt="${esc(v.title)}" /></a>`);
   return `<p align="center">\n${cells.join('\n')}\n</p>`;
 }
 
@@ -33,11 +62,50 @@ export function replaceSection(md, tag, html) {
 async function updateVideos() {
   const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${YT_CHANNEL}`);
   if (!res.ok) throw new Error(`YouTube feed HTTP ${res.status}`);
-  const videos = parseFeed(await res.text());
+  const videos = parseFeed(await res.text()).slice(0, MAX_VIDEOS);
   if (!videos.length) throw new Error('YouTube feed empty');
+  mkdirSync('assets/videos', { recursive: true });
+  const keep = new Set();
+  for (const v of videos) {
+    const img = await fetch(`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`);
+    if (!img.ok) throw new Error(`thumbnail ${v.id} HTTP ${img.status}`);
+    const b64 = Buffer.from(await img.arrayBuffer()).toString('base64');
+    writeFileSync(`assets/videos/${v.id}.svg`, videoCardSvg(v, b64));
+    keep.add(`${v.id}.svg`);
+  }
+  // Files are named by video id, so a new video is a new URL and never a stale cached image.
+  for (const f of readdirSync('assets/videos')) if (!keep.has(f)) unlinkSync(`assets/videos/${f}`);
   const md = readFileSync('README.md', 'utf8');
   writeFileSync('README.md', replaceSection(md, 'YOUTUBE', videosHtml(videos)));
   console.log(`videos: ${videos.length}`);
+}
+
+// ---------- Teslers.it ----------
+export function parseRss(xml) {
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, e]) => ({
+    title: unxml((e.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '')
+      .replace(/&#8217;/g, '’').replace(/&#8216;/g, '‘').replace(/&#8220;/g, '“').replace(/&#8221;/g, '”').replace(/&#8211;/g, '–').replace(/&#8230;/g, '…').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)),
+    link: ((e.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || '').trim(),
+    image: (e.match(/<media:content url="([^"]+)"/) || [])[1],
+  })).filter((a) => a.link.startsWith('https://www.teslers.it/') && a.image);
+}
+
+export function articlesHtml(items) {
+  const cells = items.slice(0, MAX_ARTICLES).map((a) => `    <td width="33%" valign="top">
+      <a href="${esc(a.link)}"><img src="${esc(a.image)}" alt="${esc(a.title)}" /></a>
+      <br /><sub><a href="${esc(a.link)}">${esc(a.title)}</a></sub>
+    </td>`);
+  return `<table>\n  <tr>\n${cells.join('\n')}\n  </tr>\n</table>`;
+}
+
+async function updateTeslers() {
+  const res = await fetch(TESLERS_FEED, { headers: { 'User-Agent': `${USER}-profile-readme` } });
+  if (!res.ok) throw new Error(`Teslers feed HTTP ${res.status}`);
+  const items = parseRss(await res.text());
+  if (!items.length) throw new Error('Teslers feed empty');
+  const md = readFileSync('README.md', 'utf8');
+  writeFileSync('README.md', replaceSection(md, 'TESLERS', articlesHtml(items)));
+  console.log(`articles: ${Math.min(items.length, MAX_ARTICLES)}`);
 }
 
 // ---------- Stats ----------
@@ -148,9 +216,10 @@ async function updateStats() {
 
 if (process.argv[1] && process.argv[1].endsWith('update.mjs')) {
   // Each part fails independently so one broken source never blocks the other.
+  const jobs = [['videos', updateVideos], ['teslers', updateTeslers], ['stats', updateStats]];
   let failed = 0;
-  for (const [name, fn] of [['videos', updateVideos], ['stats', updateStats]]) {
+  for (const [name, fn] of jobs) {
     try { await fn(); } catch (e) { failed++; console.error(`${name} failed:`, e.message); }
   }
-  if (failed === 2) process.exit(1);
+  if (failed === jobs.length) process.exit(1);
 }
