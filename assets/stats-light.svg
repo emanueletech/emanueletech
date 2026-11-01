@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="205" viewBox="0 0 520 205">
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .title { font-size: 16px; font-weight: 700; fill: #1a7f37; }
+    .label { font-size: 13px; fill: #1f2328; }
+    .val { font-size: 13px; font-weight: 700; fill: #1f2328; }
+    .icon { font-size: 13px; fill: #1a7f37; }
+    .muted { font-size: 12px; fill: #57606a; }
+    .fade { opacity: 0; animation: in .5s ease forwards; }
+    @keyframes in { to { opacity: 1; } }
+  </style>
+  <rect x="0.5" y="0.5" width="519" height="204" rx="8" fill="#ffffff" stroke="#d0d7de" />
+  <text class="title" x="25" y="34">GitHub stats</text>
+  <text class="title" x="285" y="34">Top languages</text>
+  
+    <g transform="translate(25, 62)" class="fade" style="animation-delay:0ms">
+      <text class="icon" x="0" y="0">★</text>
+      <text class="label" x="22" y="0">Stars</text>
+      <text class="val" x="215" y="0" text-anchor="end">2</text>
+    </g>
+    <g transform="translate(25, 88)" class="fade" style="animation-delay:120ms">
+      <text class="icon" x="0" y="0">⑂</text>
+      <text class="label" x="22" y="0">Forks</text>
+      <text class="val" x="215" y="0" text-anchor="end">1</text>
+    </g>
+    <g transform="translate(25, 114)" class="fade" style="animation-delay:240ms">
+      <text class="icon" x="0" y="0">▣</text>
+      <text class="label" x="22" y="0">Public repos</text>
+      <text class="val" x="215" y="0" text-anchor="end">3</text>
+    </g>
+    <g transform="translate(25, 140)" class="fade" style="animation-delay:360ms">
+      <text class="icon" x="0" y="0">◉</text>
+      <text class="label" x="22" y="0">Followers</text>
+      <text class="val" x="215" y="0" text-anchor="end">2</text>
+    </g>
+    <g transform="translate(25, 166)" class="fade" style="animation-delay:480ms">
+      <text class="icon" x="0" y="0">▲</text>
+      <text class="label" x="22" y="0">Contributions (1y)</text>
+      <text class="val" x="215" y="0" text-anchor="end">147</text>
+    </g>
+  <line x1="262" y1="22" x2="262" y2="185" stroke="#d0d7de" />
+  <g transform="translate(285, 52)">
+    <clipPath id="bar"><rect width="210" height="8" rx="4" /></clipPath>
+    <rect width="210" height="8" rx="4" fill="#eaeef2" />
+    <g clip-path="url(#bar)"><rect x="0.0" y="0" width="109.8" height="8" fill="#f1e05a" /><rect x="109.8" y="0" width="76.2" height="8" fill="#F05138" /><rect x="186.0" y="0" width="12.5" height="8" fill="#e34c26" /><rect x="198.5" y="0" width="8.3" height="8" fill="#663399" /><rect x="206.8" y="0" width="2.0" height="8" fill="#3572A5" /></g>
+    
+    <g transform="translate(0, 30)" class="fade" style="animation-delay:300ms">
+      <circle cx="5" cy="-4" r="5" fill="#f1e05a" />
+      <text class="label" x="16" y="0">JavaScript</text>
+      <text class="muted" x="210" y="0" text-anchor="end">52.3%</text>
+    </g>
+    <g transform="translate(0, 52)" class="fade" style="animation-delay:420ms">
+      <circle cx="5" cy="-4" r="5" fill="#F05138" />
+      <text class="label" x="16" y="0">Swift</text>
+      <text class="muted" x="210" y="0" text-anchor="end">36.3%</text>
+    </g>
+    <g transform="translate(0, 74)" class="fade" style="animation-delay:540ms">
+      <circle cx="5" cy="-4" r="5" fill="#e34c26" />
+      <text class="label" x="16" y="0">HTML</text>
+      <text class="muted" x="210" y="0" text-anchor="end">6.0%</text>
+    </g>
+    <g transform="translate(0, 96)" class="fade" style="animation-delay:660ms">
+      <circle cx="5" cy="-4" r="5" fill="#663399" />
+      <text class="label" x="16" y="0">CSS</text>
+      <text class="muted" x="210" y="0" text-anchor="end">3.9%</text>
+    </g>
+    <g transform="translate(0, 118)" class="fade" style="animation-delay:780ms">
+      <circle cx="5" cy="-4" r="5" fill="#3572A5" />
+      <text class="label" x="16" y="0">Python</text>
+      <text class="muted" x="210" y="0" text-anchor="end">0.8%</text>
+    </g>
+  </g>
+</svg>

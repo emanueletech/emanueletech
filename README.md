@@ -30,7 +30,14 @@ const emanuele = {
 ### 📺 Latest videos
 
 <!-- YOUTUBE:START -->
-<p align="center"><a href="https://www.youtube.com/@emanuele_tech">Watch on YouTube</a></p>
+<p align="center">
+<a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="https://i.ytimg.com/vi/e2BgM6dzuwM/mqdefault.jpg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
+<a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="https://i.ytimg.com/vi/P0iMwKdpltY/mqdefault.jpg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
+<a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="https://i.ytimg.com/vi/LT0_fgVeSVg/mqdefault.jpg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
+<a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="https://i.ytimg.com/vi/PdItYy4OPpk/mqdefault.jpg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
+<a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="https://i.ytimg.com/vi/2Rz5EJSSzvA/mqdefault.jpg" width="32%" alt="3D-Printing Spider-Man" /></a>
+<a href="https://www.youtube.com/watch?v=mz2Ym5uObqw" title="3D-Printing Hyper Hopper"><img src="https://i.ytimg.com/vi/mz2Ym5uObqw/mqdefault.jpg" width="32%" alt="3D-Printing Hyper Hopper" /></a>
+</p>
 <!-- YOUTUBE:END -->
 
 ### 🛠️ Projects
