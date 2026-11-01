@@ -90,7 +90,7 @@ export function statsSvg(s, theme) {
   const t = THEMES[theme];
   const items = [
     ['★', 'Stars', s.stars], ['⑂', 'Forks', s.forks], ['▣', 'Public repos', s.repos],
-    ['◉', 'Followers', s.followers], ['▲', 'Contributions (1y)', s.contributions],
+    ['◉', 'Followers', s.followers], ['▲', 'Public contributions (1y)', s.contributions],
   ];
   const rows = items.map(([icon, label, val], i) => `
     <g transform="translate(25, ${62 + i * 26})" class="fade" style="animation-delay:${i * 120}ms">
