@@ -16,9 +16,9 @@
 const emanuele = {
   brand:    "Emanuele Tech",
   based:    "Rome, Italy 🇮🇹",
-  topics:   ["3D printing", "Digital innovation & AI", "Electric vehicles"],
-  building: ["tools for makers", "Telegram bots", "browser extensions", "HTML5 games"],
-  printers: "Bambu Lab ecosystem · MakerWorld creator",
+  topics:   ["3D printing", "AI", "EVs"],
+  building: ["maker tools", "Telegram bots", "games"],
+  printing: "Bambu Lab · MakerWorld creator",
 };
 ```
 
