@@ -215,10 +215,22 @@ async function updateTeslers() {
 const TESLERS_ICON = 'https://www.teslers.it/wp-content/uploads/2025/06/cropped-ispazio-2-192x192.jpg';
 
 export function teslersBadgeSvg(iconB64) {
+  // Only the white T of the favicon, no red tile: luminance → alpha keeps the bright glyph and drops
+  // the red background; the icon is drawn larger than the slot so the T itself reads bigger.
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127" height="28" viewBox="0 0 127 28">
-  <clipPath id="ic"><rect x="9" y="7" width="14" height="14" rx="3" /></clipPath>
+  <defs>
+    <filter id="t" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix type="luminanceToAlpha" />
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0" intercept="1" />
+        <feFuncG type="linear" slope="0" intercept="1" />
+        <feFuncB type="linear" slope="0" intercept="1" />
+        <feFuncA type="linear" slope="4" intercept="-2.2" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
   <rect width="127" height="28" fill="#CC0000" />
-  <image x="9" y="7" width="14" height="14" clip-path="url(#ic)" xlink:href="data:image/jpeg;base64,${iconB64}" href="data:image/jpeg;base64,${iconB64}" />
+  <image x="3" y="1" width="26" height="26" filter="url(#t)" xlink:href="data:image/jpeg;base64,${iconB64}" href="data:image/jpeg;base64,${iconB64}" />
   <text x="31" y="17.8" fill="#fff" font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="10" font-weight="700" letter-spacing="1.25">TESLERS.IT</text>
 </svg>`;
 }
@@ -227,7 +239,7 @@ async function updateTeslersBadge() {
   const res = await fetch(TESLERS_ICON, { headers: { 'User-Agent': `${USER}-profile-readme` } });
   if (!res.ok) throw new Error(`Teslers icon HTTP ${res.status}`);
   mkdirSync('assets', { recursive: true });
-  writeFileSync('assets/badge-teslers.svg', teslersBadgeSvg(Buffer.from(await res.arrayBuffer()).toString('base64')));
+  writeFileSync('assets/badge-teslers-t.svg', teslersBadgeSvg(Buffer.from(await res.arrayBuffer()).toString('base64')));
   console.log('teslers badge written');
 }
 
