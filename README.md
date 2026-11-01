@@ -11,7 +11,7 @@
   <a href="https://www.instagram.com/emanuele_tech"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   <a href="https://www.youtube.com/@emanuele_tech"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" /></a>
   <a href="https://t.me/emanueletech"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
-  <a href="https://www.teslers.it"><img src="https://img.shields.io/badge/Teslers.it-CC0000?style=for-the-badge" alt="Teslers.it" /></a>
+  <a href="https://www.teslers.it"><img src="assets/badge-teslers.svg" height="28" alt="Teslers.it" /></a>
   <a href="https://makerworld.com/en/@Emanuele_tech"><img src="https://img.shields.io/badge/MakerWorld-00AE42?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMy43OCAyNC4wMSI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3LjM1MTUgMEwxMS44ODU0IDIuMTYwOUw2LjQxOTI5IDBMMCAyLjUzODIyVjIxLjQ2MjhMNi40MTkyOSAyNC4wMDFMMTEuODg1NCAyMS44NDAxTDE3LjM1MTUgMjQuMDAxTDIzLjc3MDggMjEuNDYyOFYyLjUzODIyTDE3LjM1MTUgMFpNMTcuMzUxNSAxLjAzMTg0TDIyLjgxNzYgMy4xOTI3NFYxMS4wMDE4TDE3LjM1MTUgOC44NDE5MlYxLjAzMTg0Wk0xNy4zNTE1IDkuODc0NzFMMjIuNzMwNyAxMi4wMDFMMTcuMzUxNSAxNC4xMjcyTDExLjk3MjMgMTIuMDAxTDE3LjM1MTUgOS44NzQ3MVpNNi40MTkyOSAxLjAzMTg0TDExLjg4NTQgMy4xOTI3NFYxMS4wMDE4TDYuNDE5MjkgOC44NDE5MlYxLjAzMTg0Wk02LjQxOTI5IDkuODc0NzFMMTEuNzk3NSAxMi4wMDFMNi40MTgzNSAxNC4xMjcyTDEuMDQwMTEgMTIuMDAxTDYuNDE5MjkgOS44NzQ3MVpNMC45NTMyMDEgMjAuODA3M1YxMi45OTgyTDYuNDE5MjkgMTUuMTU4MVYyMi45NjgyTDAuOTUzMjAxIDIwLjgwNzNaTTExLjg4NTQgMjAuODA3M1YxMi45OTgyTDE3LjM1MTUgMTUuMTU4MVYyMi45NjgyTDExLjg4NTQgMjAuODA3M1oiLz48L3N2Zz4%3D" alt="MakerWorld" /></a>
   <a href="https://linktr.ee/emanuele_tech"><img src="https://img.shields.io/badge/All_links-43E55E?style=for-the-badge&logo=linktree&logoColor=black" alt="Linktree" /></a>
 </p>
@@ -32,14 +32,7 @@ const emanuele = {
 ### 📺 Latest videos
 
 <!-- YOUTUBE:START -->
-<p align="center">
-<a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
-<a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
-<a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
-<a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
-<a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="assets/videos/2Rz5EJSSzvA.svg" width="32%" alt="3D-Printing Spider-Man" /></a>
-<a href="https://www.youtube.com/watch?v=mz2Ym5uObqw" title="3D-Printing Hyper Hopper"><img src="assets/videos/mz2Ym5uObqw.svg" width="32%" alt="3D-Printing Hyper Hopper" /></a>
-</p>
+<p align="center"><a href="https://www.youtube.com/@emanuele_tech">Watch on YouTube</a></p>
 <!-- YOUTUBE:END -->
 
 ### 📰 Latest on [Teslers.it](https://www.teslers.it)
@@ -47,22 +40,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok"><img src="https://www.teslers.it/wp-content/uploads/2026/10/tesla-robotaxi-orari-2-notte-calm-mode-grok-600x338.jpg" alt="Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y" /></a>
-      <br /><sub><a href="https://www.teslers.it/14657/tesla-robotaxi-orari-2-notte-calm-mode-grok">Tesla Robotaxi, ora si viaggia fino alle 2 di notte: arrivano la Calm Mode e Grok sulle Model Y</a></sub>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi"><img src="https://www.teslers.it/wp-content/uploads/2026/11/tesla-cybercab-halloween-scheletri-featured-600x338.jpg" alt="Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente" /></a>
-      <br /><sub><a href="https://www.teslers.it/14718/tesla-cybercab-halloween-scheletri-video-robotaxi">Tesla Cybercab, ad Halloween a bordo ci sono due scheletri: il video notturno del Robotaxi senza conducente</a></sub>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore"><img src="https://www.teslers.it/wp-content/uploads/2026/10/tesla-powerwall-heat-pump-optimization-600x338.jpg" alt="Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno" /></a>
-      <br /><sub><a href="https://www.teslers.it/14666/tesla-powerwall-3-heat-pump-optimization-europa-pompa-calore">Tesla porta in Europa Heat Pump Optimization: la Powerwall scalda casa quando c’è sole o l’energia costa meno</a></sub>
-    </td>
-  </tr>
-</table>
+<p><a href="https://www.teslers.it">Read the latest news on Teslers.it</a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
