@@ -1,10 +1,7 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-print-dark.svg" />
-  <img src="assets/banner-print-light.svg" alt="Emanuele Tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
-</picture>
+<img src="assets/brand-header.png" alt="emanuele tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00AE42&center=true&vCenter=true&width=640&lines=3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=FF5A1F&center=true&vCenter=true&width=640&lines=3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
 </p>
 
 <p align="center">
