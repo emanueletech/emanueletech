@@ -1,4 +1,4 @@
-// Generates assets/banner-launch-{dark,light}.svg (new name = new URL past GitHub image cache) (static, animated with CSS). Run once: node scripts/banner.mjs
+// Generates assets/banner-print-{dark,light}.svg (new name = new URL past GitHub image cache) (static, animated with CSS). Run once: node scripts/banner.mjs
 import { writeFileSync, mkdirSync } from 'node:fs';
 
 const THEMES = {
@@ -15,7 +15,7 @@ const ROCKET = [
   ...[34, 30, 25, 19, 12, 5].map((w) => [w, 0, 'nose']),
 ];
 const STEP = 0.2;                       // seconds per printed layer
-const GROW = 0.25;                      // seconds to lay down one layer
+const GROW = STEP;                      // a layer is laid down exactly while the nozzle crosses it
 const PRINT_END = (ROCKET.length - 1) * STEP + GROW;
 // One loop: print → window lights → engine on → lift-off out of the banner → empty bed → again.
 const T_WINDOW = PRINT_END + 0.2, T_FLAME = PRINT_END + 0.7, T_LIFT = PRINT_END + 1.0;
@@ -28,14 +28,29 @@ function layerKeyframes(i) {
   return `@keyframes l${i} { 0%, ${pct(s0)} { transform: scaleX(0); } ${pct(s1)}, ${pct(T_RESET)} { transform: scaleX(1); } ${pct(T_RESET + EPS)}, 100% { transform: scaleX(0); } }`;
 }
 
-// Head: sweeps while printing, parks aside for the launch, returns home before the next print.
-function headKeyframes() {
-  const frames = [];
-  let t = 0, right = false;
-  while (t < PRINT_END) { frames.push(`${pct(t)} { transform: translateX(${right ? 62 : -62}px); }`); right = !right; t += 0.7; }
-  frames.push(`${pct(PRINT_END + 0.5)}, ${pct(CYCLE - 0.6)} { transform: translateX(78px); }`);
-  frames.push(`100% { transform: translateX(-62px); }`);
-  return `@keyframes head { ${frames.join(' ')} }`;
+// Nozzle follows the toolpath: each layer is traced edge to edge (alternating direction, like a real
+// slicer) exactly while that layer grows, and the gantry rises one layer height at a time.
+const CX = 1010, BASE = 232, PITCH = 5, TIP_X = 1010, TIP_Y = 106, GANTRY_Y = 70;
+const extent = ([w, fin]) => [CX - w / 2 - fin, CX + w / 2 + fin];
+function motionKeyframes() {
+  const head = [], gantry = [];
+  const at = (t, dx, dy) => {
+    head.push(`${pct(t)} { transform: translate(${dx.toFixed(1)}px, ${dy}px); }`);
+    gantry.push(`${pct(t)} { transform: translateY(${dy}px); }`);
+  };
+  ROCKET.forEach((layer, i) => {
+    const [l, r] = extent(layer);
+    const [from, to] = i % 2 === 0 ? [l, r] : [r, l];
+    const dy = BASE - i * PITCH - TIP_Y;
+    at(i * STEP, from - TIP_X, dy);
+    at(i * STEP + STEP * 0.97, to - TIP_X, dy);
+  });
+  at(PRINT_END + 0.5, 78, 0);              // park up and aside for the launch
+  at(CYCLE - 0.6, 78, 0);
+  const [l0] = extent(ROCKET[0]);
+  head.push(`100% { transform: translate(${(l0 - TIP_X).toFixed(1)}px, ${BASE - TIP_Y}px); }`);
+  gantry.push(`100% { transform: translateY(${BASE - TIP_Y}px); }`);
+  return `@keyframes head { ${head.join(' ')} }\n    @keyframes gantry { ${gantry.join(' ')} }`;
 }
 
 function banner(theme) {
@@ -49,14 +64,15 @@ function banner(theme) {
       rects.push(`<rect x="${cx - w / 2 - fin}" y="${y}" width="${fin}" height="${h}" fill="${t.accent2}" />`);
       rects.push(`<rect x="${cx + w / 2}" y="${y}" width="${fin}" height="${h}" fill="${t.accent2}" />`);
     }
-    return `<g class="layer" style="animation-name:l${i}">${rects.join('')}</g>`;
+    return `<g class="layer" style="animation-name:l${i}; transform-origin:${i % 2 === 0 ? 'left' : 'right'} center">${rects.join('')}</g>`;
   }).join('\n      ');
   const css = `
     text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
     .layer { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation-duration: ${CYCLE.toFixed(2)}s; animation-timing-function: linear; animation-iteration-count: infinite; }
     ${ROCKET.map((_, i) => layerKeyframes(i)).join('\n    ')}
-    .head { animation: head ${CYCLE.toFixed(2)}s ease-in-out infinite; }
-    ${headKeyframes()}
+    .head { animation: head ${CYCLE.toFixed(2)}s linear infinite; }
+    .gantry { animation: gantry ${CYCLE.toFixed(2)}s linear infinite; }
+    ${motionKeyframes()}
     .window { opacity: 0; animation: window ${CYCLE.toFixed(2)}s linear infinite; }
     @keyframes window { 0%, ${pct(T_WINDOW)} { opacity: 0; } ${pct(T_WINDOW + 0.3)}, ${pct(T_RESET)} { opacity: 1; } ${pct(T_RESET + EPS)}, 100% { opacity: 0; } }
     .rocket { animation: lift ${CYCLE.toFixed(2)}s infinite; }
@@ -99,7 +115,7 @@ function banner(theme) {
     <path d="M900 250 V40 H1120 V250" />
     <path d="M890 250 H1130" />
   </g>
-  <line x1="900" y1="70" x2="1120" y2="70" stroke="${t.frame}" stroke-width="3" />
+  <line class="gantry" x1="900" y1="70" x2="1120" y2="70" stroke="${t.frame}" stroke-width="3" />
   <rect x="920" y="240" width="180" height="6" rx="3" fill="${t.frame}" />
 
   <!-- launch smoke on the bed -->
@@ -131,5 +147,5 @@ function banner(theme) {
 }
 
 mkdirSync('assets', { recursive: true });
-for (const theme of Object.keys(THEMES)) writeFileSync(`assets/banner-launch-${theme}.svg`, banner(theme));
+for (const theme of Object.keys(THEMES)) writeFileSync(`assets/banner-print-${theme}.svg`, banner(theme));
 console.log('banners written');
