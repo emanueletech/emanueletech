@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f8fa" /><stop offset="1" stop-color="#dcfce7" />
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#e5e7eb" stroke-width="1" />
+    </pattern>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3b0" /><stop offset="0.45" stop-color="#ffb020" /><stop offset="1" stop-color="#ff4d1a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .layer { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation: print 0.25s linear forwards; }
+    @keyframes print { to { transform: scaleX(1); } }
+    .head { animation: sweep 0.7s ease-in-out 8 alternate; }
+    @keyframes sweep { from { transform: translateX(-62px); } to { transform: translateX(62px); } }
+    .park { animation: park 0.6s ease-in-out 5.10s forwards; }
+    @keyframes park { to { transform: translateX(78px); } }
+    .window { opacity: 0; animation: show 0.3s 5.30s forwards; }
+    .rocket { animation: lift 1.2s cubic-bezier(.5,0,.3,1) 6.00s forwards; }
+    @keyframes lift { to { transform: translateY(-30px); } }
+    .flame { opacity: 0; transform-box: fill-box; transform-origin: center top;
+             animation: show 0.2s 5.80s forwards, flicker 0.12s 5.80s infinite alternate; }
+    @keyframes flicker { from { transform: scaleY(0.85) scaleX(0.95); } to { transform: scaleY(1.15) scaleX(1.05); } }
+    @keyframes show { to { opacity: 1; } }
+    .blink { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+  <rect width="1200" height="280" rx="14" fill="url(#bg)" />
+  <rect width="1200" height="280" rx="14" fill="url(#grid)" opacity="0.6" />
+
+  <text x="70" y="118" font-size="64" font-weight="800" fill="#111827">Emanuele Tech</text>
+  <text x="72" y="160" font-size="22" fill="#4b5563">3D printing · Digital innovation &amp; AI · Electric vehicles</text>
+  <text x="72" y="214" font-size="18" font-family="ui-monospace, 'Fira Code', Menlo, monospace" fill="#00AE42">$ make things --open-source<tspan class="blink">▌</tspan></text>
+
+  <!-- printer frame -->
+  <g stroke="#9ca3af" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M900 250 V40 H1120 V250" />
+    <path d="M890 250 H1130" />
+  </g>
+  <line x1="900" y1="70" x2="1120" y2="70" stroke="#9ca3af" stroke-width="3" />
+  <rect x="920" y="240" width="180" height="6" rx="3" fill="#9ca3af" />
+
+  <!-- the printed rocket: layers first, then the window lights up and it lifts off the bed -->
+  <g class="rocket">
+    <g class="flame">
+      <path d="M997 236 Q1010 276 1023 236 Z" fill="url(#flame)" />
+      <path d="M1003 236 Q1010 260 1017 236 Z" fill="#fffbe6" />
+    </g>
+    <g>
+      <g class="layer" style="animation-delay:0.00s"><rect x="999" y="232" width="22" height="4" fill="#9ca3af" /></g>
+      <g class="layer" style="animation-delay:0.20s"><rect x="997" y="227" width="26" height="4" fill="#9ca3af" /></g>
+      <g class="layer" style="animation-delay:0.40s"><rect x="992" y="222" width="36" height="4" fill="#007a2f" /><rect x="968" y="222" width="24" height="4" fill="#007a2f" /><rect x="1028" y="222" width="24" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:0.60s"><rect x="992" y="217" width="36" height="4" fill="#007a2f" /><rect x="970" y="217" width="22" height="4" fill="#007a2f" /><rect x="1028" y="217" width="22" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:0.80s"><rect x="992" y="212" width="36" height="4" fill="#007a2f" /><rect x="973" y="212" width="19" height="4" fill="#007a2f" /><rect x="1028" y="212" width="19" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:1.00s"><rect x="992" y="207" width="36" height="4" fill="#007a2f" /><rect x="977" y="207" width="15" height="4" fill="#007a2f" /><rect x="1028" y="207" width="15" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:1.20s"><rect x="992" y="202" width="36" height="4" fill="#007a2f" /><rect x="982" y="202" width="10" height="4" fill="#007a2f" /><rect x="1028" y="202" width="10" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:1.40s"><rect x="992" y="197" width="36" height="4" fill="#007a2f" /><rect x="987" y="197" width="5" height="4" fill="#007a2f" /><rect x="1028" y="197" width="5" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:1.60s"><rect x="992" y="192" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:1.80s"><rect x="992" y="187" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:2.00s"><rect x="992" y="182" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:2.20s"><rect x="992" y="177" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:2.40s"><rect x="992" y="172" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:2.60s"><rect x="992" y="167" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:2.80s"><rect x="992" y="162" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:3.00s"><rect x="992" y="157" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:3.20s"><rect x="992" y="152" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:3.40s"><rect x="992" y="147" width="36" height="4" fill="#00AE42" /></g>
+      <g class="layer" style="animation-delay:3.60s"><rect x="993" y="142" width="34" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:3.80s"><rect x="995" y="137" width="30" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:4.00s"><rect x="997.5" y="132" width="25" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:4.20s"><rect x="1000.5" y="127" width="19" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:4.40s"><rect x="1004" y="122" width="12" height="4" fill="#007a2f" /></g>
+      <g class="layer" style="animation-delay:4.60s"><rect x="1007.5" y="117" width="5" height="4" fill="#007a2f" /></g>
+    </g>
+    <circle class="window" cx="1010" cy="169" r="9" fill="#f6f8fa" stroke="#007a2f" stroke-width="3" />
+    <circle class="window" cx="1007" cy="166" r="3" fill="#111827" opacity="0.6" />
+  </g>
+
+  <g class="park">
+    <g class="head">
+      <rect x="985" y="58" width="50" height="34" rx="5" fill="#9ca3af" />
+      <path d="M1002 92 h16 l-8 14 z" fill="#00AE42" />
+    </g>
+  </g>
+</svg>
