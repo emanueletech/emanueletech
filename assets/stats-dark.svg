@@ -36,33 +36,33 @@
     <g transform="translate(25, 166)" class="fade" style="animation-delay:480ms">
       <text class="icon" x="0" y="0">▲</text>
       <text class="label" x="22" y="0">Public contributions (1y)</text>
-      <text class="val" x="215" y="0" text-anchor="end">176</text>
+      <text class="val" x="215" y="0" text-anchor="end">192</text>
     </g>
   <line x1="262" y1="22" x2="262" y2="185" stroke="#30363d" />
   <g transform="translate(285, 52)">
     <clipPath id="bar"><rect width="210" height="8" rx="4" /></clipPath>
     <rect width="210" height="8" rx="4" fill="#21262d" />
-    <g clip-path="url(#bar)"><rect x="0.0" y="0" width="118.5" height="8" fill="#f1e05a" /><rect x="118.5" y="0" width="69.4" height="8" fill="#F05138" /><rect x="187.9" y="0" width="11.7" height="8" fill="#e34c26" /><rect x="199.6" y="0" width="7.5" height="8" fill="#663399" /><rect x="207.1" y="0" width="2.0" height="8" fill="#3572A5" /></g>
+    <g clip-path="url(#bar)"><rect x="0.0" y="0" width="123.1" height="8" fill="#f1e05a" /><rect x="123.1" y="0" width="65.7" height="8" fill="#F05138" /><rect x="188.8" y="0" width="11.3" height="8" fill="#e34c26" /><rect x="200.1" y="0" width="7.1" height="8" fill="#663399" /><rect x="207.2" y="0" width="2.0" height="8" fill="#3572A5" /></g>
     
     <g transform="translate(0, 30)" class="fade" style="animation-delay:300ms">
       <circle cx="5" cy="-4" r="5" fill="#f1e05a" />
       <text class="label" x="16" y="0">JavaScript</text>
-      <text class="muted" x="210" y="0" text-anchor="end">56.4%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">58.6%</text>
     </g>
     <g transform="translate(0, 52)" class="fade" style="animation-delay:420ms">
       <circle cx="5" cy="-4" r="5" fill="#F05138" />
       <text class="label" x="16" y="0">Swift</text>
-      <text class="muted" x="210" y="0" text-anchor="end">33.1%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">31.3%</text>
     </g>
     <g transform="translate(0, 74)" class="fade" style="animation-delay:540ms">
       <circle cx="5" cy="-4" r="5" fill="#e34c26" />
       <text class="label" x="16" y="0">HTML</text>
-      <text class="muted" x="210" y="0" text-anchor="end">5.6%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">5.4%</text>
     </g>
     <g transform="translate(0, 96)" class="fade" style="animation-delay:660ms">
       <circle cx="5" cy="-4" r="5" fill="#663399" />
       <text class="label" x="16" y="0">CSS</text>
-      <text class="muted" x="210" y="0" text-anchor="end">3.6%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">3.4%</text>
     </g>
     <g transform="translate(0, 118)" class="fade" style="animation-delay:780ms">
       <circle cx="5" cy="-4" r="5" fill="#3572A5" />
