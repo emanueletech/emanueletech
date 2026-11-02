@@ -1,7 +1,10 @@
-<img src="assets/brand-header.png" alt="emanuele tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-print-dark.svg" />
+  <img src="assets/banner-print-light.svg" alt="Emanuele Tech: 3D printing, digital innovation & AI, electric vehicles" width="100%" />
+</picture>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=FF5A1F&center=true&vCenter=true&width=640&lines=3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00AE42&center=true&vCenter=true&width=640&lines=3D+printing+creator+from+Rome;Building+open-source+tools+for+makers;Telegram+bots+%26+automation" alt="Typing intro" />
 </p>
 
 <p align="center">
@@ -29,14 +32,7 @@ const emanuele = {
 ### 📺 Latest videos
 
 <!-- YOUTUBE:START -->
-<p align="center">
-<a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
-<a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
-<a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
-<a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk-32e6dd16.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
-<a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="assets/videos/2Rz5EJSSzvA-2b81747c.svg" width="32%" alt="3D-Printing Spider-Man" /></a>
-<a href="https://www.youtube.com/watch?v=mz2Ym5uObqw" title="3D-Printing Hyper Hopper"><img src="assets/videos/mz2Ym5uObqw-1939a717.svg" width="32%" alt="3D-Printing Hyper Hopper" /></a>
-</p>
+<p align="center"><a href="https://www.youtube.com/@emanuele_tech">Watch on YouTube</a></p>
 <!-- YOUTUBE:END -->
 
 ### 📰 Latest on [Teslers.it](https://www.teslers.it)
@@ -44,7 +40,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/14695/tesla-grok-intel-atom-aggiornamento-2026-38" title="Grok sulle Tesla con Intel: i file arrivano con l’aggiornamento 2026.38, ma Tesla lo attiverà?"><img src="assets/teslers/14695-ac1f7d3c.svg" width="33%" alt="Grok sulle Tesla con Intel: i file arrivano con l’aggiornamento 2026.38, ma Tesla lo attiverà?" /></a><a href="https://www.teslers.it/14679/tesla-emergency-drive-away-539-dollari-assistenza" title="Tesla Emergency Drive Away, toccare Activate può costare 539 dollari: anche se l’auto resta ferma"><img src="assets/teslers/14679-6fd52713.svg" width="33%" alt="Tesla Emergency Drive Away, toccare Activate può costare 539 dollari: anche se l’auto resta ferma" /></a><a href="https://www.teslers.it/14674/tesla-fsd-cervo-dashcam-automobilista-olandese" title="FSD frena da solo e si ferma davanti a un cervo al buio: il video di un automobilista olandese"><img src="assets/teslers/14674-98912f94.svg" width="33%" alt="FSD frena da solo e si ferma davanti a un cervo al buio: il video di un automobilista olandese" /></a></p>
+<p><a href="https://www.teslers.it">Read the latest news on Teslers.it</a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
@@ -64,10 +60,10 @@ Browser extension for MakerWorld creators: stats, points, gift cards, review fil
 
 Send a social link, get the video back ready to save to your iPhone camera roll. 1,700+ supported sites, automatic H.264 transcoding, quality picker, photo albums and carousels, Telegram Stars credits. Self-hosted on a NAS.
 
-#### 🎮 [game-off-2026](https://github.com/emanueletech/game-off-2026)
+#### 🎮 [layer-shift](https://github.com/emanueletech/layer-shift)
 ![Phaser](https://img.shields.io/badge/Phaser_3-8B5CF6?style=flat-square) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![Game Off](https://img.shields.io/badge/GitHub_Game_Off-2026-181717?style=flat-square&logo=github)
 
-My entry for GitHub Game Off 2026: a browser game, playable on itch.io.
+My GitHub Game Off 2026 entry (theme: SHIFT): night shift at the print farm, where you fix every 3D-printed layer using only the Shift keys.
 
 ### 🧰 Tech stack
 
