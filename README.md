@@ -52,6 +52,11 @@ I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 ### 🛠️ Projects
 
+#### 🤖 [telegram-ai-secretary](https://github.com/emanueletech/telegram-ai-secretary) — AI secretary for Telegram
+![Stars](https://img.shields.io/github/stars/emanueletech/telegram-ai-secretary?style=flat-square&color=00AE42) ![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat-square&logo=python&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Telegram](https://img.shields.io/badge/Chat_Automation-26A5E4?style=flat-square&logo=telegram&logoColor=white) ![Voice](https://img.shields.io/badge/voice-on--device-2EE66B?style=flat-square)
+
+Answers your Telegram DMs in your name while you're busy: an AI that knows your business, replies in the sender's language and tone, transcribes voice notes on your own machine, and forwards you the chats that need a human. Control panel inside Telegram, one Docker container on a NAS or VPS.
+
 #### 🧮 [3d-print-cost](https://github.com/emanueletech/3d-print-cost)
 ![Stars](https://img.shields.io/github/stars/emanueletech/3d-print-cost?style=flat-square&color=00AE42) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white) ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white) ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat-square&logo=windows11&logoColor=white) ![macOS](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white)
 
