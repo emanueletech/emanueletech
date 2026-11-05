@@ -33,12 +33,12 @@ const emanuele = {
 
 <!-- YOUTUBE:START -->
 <p align="center">
+<a href="https://www.youtube.com/watch?v=425NOxXyOL4" title="3D-Printing Flexi Snowflake"><img src="assets/videos/425NOxXyOL4-6120cdb6.svg" width="32%" alt="3D-Printing Flexi Snowflake" /></a>
 <a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
 <a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
 <a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
 <a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk-32e6dd16.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
 <a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="assets/videos/2Rz5EJSSzvA-2b81747c.svg" width="32%" alt="3D-Printing Spider-Man" /></a>
-<a href="https://www.youtube.com/watch?v=mz2Ym5uObqw" title="3D-Printing Hyper Hopper"><img src="assets/videos/mz2Ym5uObqw-1939a717.svg" width="32%" alt="3D-Printing Hyper Hopper" /></a>
 </p>
 <!-- YOUTUBE:END -->
 
@@ -47,7 +47,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/14814/tesla-berlin-engineering-center-btec-koepenick" title="Tesla apre il Berlin Engineering Center: 30 laboratori a mezz’ora dalla Giga Berlin"><img src="assets/teslers/14814-e8329161.svg" width="33%" alt="Tesla apre il Berlin Engineering Center: 30 laboratori a mezz’ora dalla Giga Berlin" /></a><a href="https://www.teslers.it/14759/tesla-conference-call-video-musk-spacex" title="La prossima conference call di Tesla sarà in video: lo promette Musk dopo il confronto con SpaceX"><img src="assets/teslers/14759-0f55ab58.svg" width="33%" alt="La prossima conference call di Tesla sarà in video: lo promette Musk dopo il confronto con SpaceX" /></a><a href="https://www.teslers.it/14789/tesla-roadster-video-pov-kickflip-auto-volante" title="Tesla Roadster, il video in prima persona del kickflip: ecco cosa vedono le telecamere dell’auto volante"><img src="assets/teslers/14789-9d897d6d.svg" width="33%" alt="Tesla Roadster, il video in prima persona del kickflip: ecco cosa vedono le telecamere dell’auto volante" /></a></p>
+<p align="center"><a href="https://www.teslers.it/14796/tesla-cybercab-nhtsa-domanda-8-certificazione-riservata" title="Tesla Cybercab, risposta consegnata alla NHTSA: ma i metodi di certificazione restano segreti"><img src="assets/teslers/14796-2a174a3a.svg" width="33%" alt="Tesla Cybercab, risposta consegnata alla NHTSA: ma i metodi di certificazione restano segreti" /></a><a href="https://www.teslers.it/14764/tesla-megafactory-texas-zona-franca-megapack-3" title="Tesla, via libera doganale per la Megafactory in Texas: agevolazioni sui componenti importati per i Megapack 3"><img src="assets/teslers/14764-f98d81fd.svg" width="33%" alt="Tesla, via libera doganale per la Megafactory in Texas: agevolazioni sui componenti importati per i Megapack 3" /></a><a href="https://www.teslers.it/14793/tesla-cybercab-test-detroit-michigan-waymo" title="Tesla Cybercab, i test arrivano a Detroit: circa 24 esemplari su strada con volante temporaneo, e lì c’è già Waymo"><img src="assets/teslers/14793-15ba8f51.svg" width="33%" alt="Tesla Cybercab, i test arrivano a Detroit: circa 24 esemplari su strada con volante temporaneo, e lì c’è già Waymo" /></a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
