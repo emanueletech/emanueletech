@@ -63,7 +63,7 @@ Answers your Telegram DMs in your name while you're busy: an AI that knows your 
 Desktop app that reads your `.3mf` files and gives you print time, filament use and the **real cost** of every 3D print.
 
 #### 📊 [makerpulse](https://github.com/emanueletech/makerpulse)
-![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=flat-square&logo=googlechrome&logoColor=white) ![Edge](https://img.shields.io/badge/Edge-0078D7?style=flat-square&logo=microsoftedge&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=flat-square&logo=googlechrome&logoColor=white) ![Edge](https://img.shields.io/badge/Edge-0078D7?style=flat-square&logo=microsoftedge&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 Browser extension for MakerWorld creators: stats, points, gift cards, review filters and quick replies.
 
