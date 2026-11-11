@@ -31,12 +31,12 @@
     <g transform="translate(25, 140)" class="fade" style="animation-delay:360ms">
       <text class="icon" x="0" y="0">◉</text>
       <text class="label" x="22" y="0">Followers</text>
-      <text class="val" x="215" y="0" text-anchor="end">2</text>
+      <text class="val" x="215" y="0" text-anchor="end">3</text>
     </g>
     <g transform="translate(25, 166)" class="fade" style="animation-delay:480ms">
       <text class="icon" x="0" y="0">▲</text>
       <text class="label" x="22" y="0">Public contributions (1y)</text>
-      <text class="val" x="215" y="0" text-anchor="end">207</text>
+      <text class="val" x="215" y="0" text-anchor="end">208</text>
     </g>
   <line x1="262" y1="22" x2="262" y2="185" stroke="#d0d7de" />
   <g transform="translate(285, 52)">
