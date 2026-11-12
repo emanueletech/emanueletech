@@ -65,7 +65,7 @@ Desktop app that reads your `.3mf` files and gives you print time, filament use 
 #### 📊 [makerpulse](https://github.com/emanueletech/makerpulse)
 ![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=flat-square&logo=googlechrome&logoColor=white) ![Edge](https://img.shields.io/badge/Edge-0078D7?style=flat-square&logo=microsoftedge&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-Browser extension for MakerWorld creators: stats, points, gift cards, review filters and quick replies.
+Browser extension for MakerWorld creators: stats, points, gift cards, replies from one inbox, review filters and trends.
 
 #### 🎬 yoink — Telegram media bot &nbsp; <a href="https://t.me/yoinkvideobot"><img src="https://img.shields.io/badge/Open_in_Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Open in Telegram" /></a>
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![yt-dlp](https://img.shields.io/badge/yt--dlp-FF0000?style=flat-square) ![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=flat-square&logo=ffmpeg&logoColor=white) ![Closed source](https://img.shields.io/badge/source-closed-555?style=flat-square)
