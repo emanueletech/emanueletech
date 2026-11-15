@@ -33,12 +33,12 @@ const emanuele = {
 
 <!-- YOUTUBE:START -->
 <p align="center">
+<a href="https://www.youtube.com/watch?v=pzDiji6TK0Q" title="3D-Printing Santa's Workshop – Assembly Animation 🎅"><img src="assets/videos/pzDiji6TK0Q-6ba12148.svg" width="32%" alt="3D-Printing Santa's Workshop – Assembly Animation 🎅" /></a>
 <a href="https://www.youtube.com/watch?v=425NOxXyOL4" title="3D-Printing Flexi Snowflake"><img src="assets/videos/425NOxXyOL4-6120cdb6.svg" width="32%" alt="3D-Printing Flexi Snowflake" /></a>
 <a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
 <a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
 <a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
 <a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk-32e6dd16.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
-<a href="https://www.youtube.com/watch?v=2Rz5EJSSzvA" title="3D-Printing Spider-Man"><img src="assets/videos/2Rz5EJSSzvA-2b81747c.svg" width="32%" alt="3D-Printing Spider-Man" /></a>
 </p>
 <!-- YOUTUBE:END -->
 
@@ -47,7 +47,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/15079/tesla-fsd-times-square-cartellone-pubblicitario" title="Tesla porta l’FSD a Times Square: è il primo cartellone pubblicitario dedicato alla guida supervisionata"><img src="assets/teslers/15079-c4f74c6f.svg" width="33%" alt="Tesla porta l’FSD a Times Square: è il primo cartellone pubblicitario dedicato alla guida supervisionata" /></a><a href="https://www.teslers.it/15054/tesla-nintendo-switch-2-volante-can-bus" title="Guidare una Tesla con la Nintendo Switch 2: un ricercatore controlla volante, pedali e frecce via CAN bus"><img src="assets/teslers/15054-645725ac.svg" width="33%" alt="Guidare una Tesla con la Nintendo Switch 2: un ricercatore controlla volante, pedali e frecce via CAN bus" /></a><a href="https://www.teslers.it/15064/spacex-starship-flight-15-catch-torre-mechazilla" title="SpaceX afferra Starship con la torre per la prima volta: Ship 42 torna a Starbase dopo 22 ore e mezza in orbita"><img src="assets/teslers/15064-f69a6870.svg" width="33%" alt="SpaceX afferra Starship con la torre per la prima volta: Ship 42 torna a Starbase dopo 22 ore e mezza in orbita" /></a></p>
+<p align="center"><a href="https://www.teslers.it/15072/tesla-semi-primo-service-center-laredo-texas" title="Tesla apre il primo Service Center dedicato al Tesla Semi: si trova a Laredo, in Texas"><img src="assets/teslers/15072-c06c851b.svg" width="33%" alt="Tesla apre il primo Service Center dedicato al Tesla Semi: si trova a Laredo, in Texas" /></a><a href="https://www.teslers.it/15079/tesla-fsd-times-square-cartellone-pubblicitario" title="Tesla porta l’FSD a Times Square: è il primo cartellone pubblicitario dedicato alla guida supervisionata"><img src="assets/teslers/15079-c4f74c6f.svg" width="33%" alt="Tesla porta l’FSD a Times Square: è il primo cartellone pubblicitario dedicato alla guida supervisionata" /></a><a href="https://www.teslers.it/15054/tesla-nintendo-switch-2-volante-can-bus" title="Guidare una Tesla con la Nintendo Switch 2: un ricercatore controlla volante, pedali e frecce via CAN bus"><img src="assets/teslers/15054-645725ac.svg" width="33%" alt="Guidare una Tesla con la Nintendo Switch 2: un ricercatore controlla volante, pedali e frecce via CAN bus" /></a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
