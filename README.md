@@ -33,12 +33,12 @@ const emanuele = {
 
 <!-- YOUTUBE:START -->
 <p align="center">
+<a href="https://www.youtube.com/watch?v=XmxLMYnBtiM" title="3D-Printing Animated Santa's Workshop Diorama"><img src="assets/videos/XmxLMYnBtiM-5ac97374.svg" width="32%" alt="3D-Printing Animated Santa's Workshop Diorama" /></a>
 <a href="https://www.youtube.com/watch?v=pzDiji6TK0Q" title="3D-Printing Santa's Workshop – Assembly Animation 🎅"><img src="assets/videos/pzDiji6TK0Q-6ba12148.svg" width="32%" alt="3D-Printing Santa's Workshop – Assembly Animation 🎅" /></a>
 <a href="https://www.youtube.com/watch?v=425NOxXyOL4" title="3D-Printing Flexi Snowflake"><img src="assets/videos/425NOxXyOL4-6120cdb6.svg" width="32%" alt="3D-Printing Flexi Snowflake" /></a>
 <a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
 <a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
 <a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
-<a href="https://www.youtube.com/watch?v=PdItYy4OPpk" title="3D-Printing Pokémon Graded Card Stand"><img src="assets/videos/PdItYy4OPpk-32e6dd16.svg" width="32%" alt="3D-Printing Pokémon Graded Card Stand" /></a>
 </p>
 <!-- YOUTUBE:END -->
 
@@ -47,7 +47,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/15103/tesla-robotaxi-auto-proprietari-test-dicembre-musk" title="Tesla Robotaxi, i proprietari potranno far lavorare la propria auto già da dicembre: Musk annuncia i primi test"><img src="assets/teslers/15103-45ae2b27.svg" width="33%" alt="Tesla Robotaxi, i proprietari potranno far lavorare la propria auto già da dicembre: Musk annuncia i primi test" /></a><a href="https://www.teslers.it/15097/tesla-cybercab-giga-berlin-3-miliardi-produzione-2029" title="Tesla porta il Cybercab in Europa: 3 miliardi di euro per una nuova fabbrica a Giga Berlin, fino ad un milione di robotaxi l’anno"><img src="assets/teslers/15097-b8fdfefe.svg" width="33%" alt="Tesla porta il Cybercab in Europa: 3 miliardi di euro per una nuova fabbrica a Giga Berlin, fino ad un milione di robotaxi l’anno" /></a><a href="https://www.teslers.it/15090/tesla-fsd-sottopassaggio-allagato-slovenia-video" title="L’FSD di Tesla evita un sottopassaggio allagato in Slovenia: il video con almeno 1,5 metri d’acqua"><img src="assets/teslers/15090-8bb4eedf.svg" width="33%" alt="L’FSD di Tesla evita un sottopassaggio allagato in Slovenia: il video con almeno 1,5 metri d’acqua" /></a></p>
+<p align="center"><a href="https://www.teslers.it/15127/tesla-autopilot-fsd-camion-ribaltato-i75-naples-tre-morti" title="Tesla con Autopilot/FSD attivo contro un camion ribaltato a 71 mph: tre morti in Florida, ma il report è oscurato"><img src="assets/teslers/15127-65397f50.svg" width="33%" alt="Tesla con Autopilot/FSD attivo contro un camion ribaltato a 71 mph: tre morti in Florida, ma il report è oscurato" /></a><a href="https://www.teslers.it/15108/tesla-megapack-teaser-transformation-re-plus" title="Tesla Megapack prepara una novità: “Transformation loading”, la presentazione è oggi al RE+"><img src="assets/teslers/15108-07376bc8.svg" width="33%" alt="Tesla Megapack prepara una novità: “Transformation loading”, la presentazione è oggi al RE+" /></a><a href="https://www.teslers.it/15134/tesla-2026-44-1-firmware-prezzo-ricarica-grok-trascrizioni" title="Tesla 2026.44.1, cosa c’è nel firmware: avvisi sul prezzo della ricarica, cronologia di Grok sullo smartphone e navigazione sulle strade principali"><img src="assets/teslers/15134-054e64f3.svg" width="33%" alt="Tesla 2026.44.1, cosa c’è nel firmware: avvisi sul prezzo della ricarica, cronologia di Grok sullo smartphone e navigazione sulle strade principali" /></a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
