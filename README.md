@@ -33,12 +33,12 @@ const emanuele = {
 
 <!-- YOUTUBE:START -->
 <p align="center">
+<a href="https://www.youtube.com/watch?v=s3I3fowMpR8" title="3D-Printing Santa's Chimney Advent Calendar"><img src="assets/videos/s3I3fowMpR8-dc1786d0.svg" width="32%" alt="3D-Printing Santa's Chimney Advent Calendar" /></a>
+<a href="https://www.youtube.com/watch?v=sGTq9oJeBl0" title="3D-Printing Santa's Chimney Advent Calendar – Assembly Animation 🎅"><img src="assets/videos/sGTq9oJeBl0-47dafe2b.svg" width="32%" alt="3D-Printing Santa's Chimney Advent Calendar – Assembly Animation 🎅" /></a>
 <a href="https://www.youtube.com/watch?v=XmxLMYnBtiM" title="3D-Printing Animated Santa's Workshop Diorama"><img src="assets/videos/XmxLMYnBtiM-5ac97374.svg" width="32%" alt="3D-Printing Animated Santa's Workshop Diorama" /></a>
 <a href="https://www.youtube.com/watch?v=pzDiji6TK0Q" title="3D-Printing Santa's Workshop – Assembly Animation 🎅"><img src="assets/videos/pzDiji6TK0Q-6ba12148.svg" width="32%" alt="3D-Printing Santa's Workshop – Assembly Animation 🎅" /></a>
 <a href="https://www.youtube.com/watch?v=425NOxXyOL4" title="3D-Printing Flexi Snowflake"><img src="assets/videos/425NOxXyOL4-6120cdb6.svg" width="32%" alt="3D-Printing Flexi Snowflake" /></a>
 <a href="https://www.youtube.com/watch?v=e2BgM6dzuwM" title="3D-Printing Christmas Gift Box"><img src="assets/videos/e2BgM6dzuwM-cdd0d10f.svg" width="32%" alt="3D-Printing Christmas Gift Box" /></a>
-<a href="https://www.youtube.com/watch?v=P0iMwKdpltY" title="3D-Printing Rising Skeleton Coffin"><img src="assets/videos/P0iMwKdpltY-5ff53fda.svg" width="32%" alt="3D-Printing Rising Skeleton Coffin" /></a>
-<a href="https://www.youtube.com/watch?v=LT0_fgVeSVg" title="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin"><img src="assets/videos/LT0_fgVeSVg-e9e5f60b.svg" width="32%" alt="3D-Printing Pokéball Coin Holder Card - 30th Anniversary Coin" /></a>
 </p>
 <!-- YOUTUBE:END -->
 
@@ -47,7 +47,7 @@ const emanuele = {
 I run **Teslers.it**, an Italian news site about Tesla and electric vehicles.
 
 <!-- TESLERS:START -->
-<p align="center"><a href="https://www.teslers.it/15404/tesla-starlink-integrato-tutti-modelli-fine-2027" title="Tesla, Starlink integrato potrebbe arrivare su tutti i modelli e non solo sul Cybercab: Musk indica quando (e c’entra la guida senza supervisione)"><img src="assets/teslers/15404-7df88bb2.svg" width="33%" alt="Tesla, Starlink integrato potrebbe arrivare su tutti i modelli e non solo sul Cybercab: Musk indica quando (e c’entra la guida senza supervisione)" /></a><a href="https://www.teslers.it/15398/tesla-navigazione-grok-x-traffico-destinazione" title="Tesla, la navigazione si allea con Grok e X: Musk svela cosa vi dirà l’auto prima di arrivare a destinazione"><img src="assets/teslers/15398-45e28088.svg" width="33%" alt="Tesla, la navigazione si allea con Grok e X: Musk svela cosa vi dirà l’auto prima di arrivare a destinazione" /></a><a href="https://www.teslers.it/15392/tesla-ai5-optimus-auto-restano-ai4" title="Niente AI5 sulle Tesla: Musk chiarisce il futuro dell’hardware FSD e svela quanto pesa oggi il computer AI4"><img src="assets/teslers/15392-8bf78ac1.svg" width="33%" alt="Niente AI5 sulle Tesla: Musk chiarisce il futuro dell’hardware FSD e svela quanto pesa oggi il computer AI4" /></a></p>
+<p align="center"><a href="https://www.teslers.it/15443/tesla-fsd-v15-video-proprietari-manhattan-reality-view" title="Tesla FSD v15, Tesla rilancia i primi video dei proprietari: quasi due ore a Manhattan e cosa riesce a vedere Reality View"><img src="assets/teslers/15443-d394e835.svg" width="33%" alt="Tesla FSD v15, Tesla rilancia i primi video dei proprietari: quasi due ore a Manhattan e cosa riesce a vedere Reality View" /></a><a href="https://www.teslers.it/15427/tesla-fsd-v15-reality-view-latenza-musk" title="Tesla FSD v15, Reality View ha già un difetto: Musk spiega da dove nasce e come verrà corretto"><img src="assets/teslers/15427-9a8cf4ae.svg" width="33%" alt="Tesla FSD v15, Reality View ha già un difetto: Musk spiega da dove nasce e come verrà corretto" /></a><a href="https://www.teslers.it/15418/tesla-fsd-v15-rimosso-menu-disattivazione" title="Tesla FSD v15 dice addio alla schermata più odiata dai conducenti: cosa cambia quando riprendete il controllo"><img src="assets/teslers/15418-72ff67aa.svg" width="33%" alt="Tesla FSD v15 dice addio alla schermata più odiata dai conducenti: cosa cambia quando riprendete il controllo" /></a></p>
 <!-- TESLERS:END -->
 
 ### 🛠️ Projects
