@@ -26,48 +26,48 @@
     <g transform="translate(25, 114)" class="fade" style="animation-delay:240ms">
       <text class="icon" x="0" y="0">▣</text>
       <text class="label" x="22" y="0">Public repos</text>
-      <text class="val" x="215" y="0" text-anchor="end">6</text>
+      <text class="val" x="215" y="0" text-anchor="end">7</text>
     </g>
     <g transform="translate(25, 140)" class="fade" style="animation-delay:360ms">
       <text class="icon" x="0" y="0">◉</text>
       <text class="label" x="22" y="0">Followers</text>
-      <text class="val" x="215" y="0" text-anchor="end">4</text>
+      <text class="val" x="215" y="0" text-anchor="end">5</text>
     </g>
     <g transform="translate(25, 166)" class="fade" style="animation-delay:480ms">
       <text class="icon" x="0" y="0">▲</text>
       <text class="label" x="22" y="0">Public contributions (1y)</text>
-      <text class="val" x="215" y="0" text-anchor="end">272</text>
+      <text class="val" x="215" y="0" text-anchor="end">276</text>
     </g>
   <line x1="262" y1="22" x2="262" y2="185" stroke="#d0d7de" />
   <g transform="translate(285, 52)">
     <clipPath id="bar"><rect width="210" height="8" rx="4" /></clipPath>
     <rect width="210" height="8" rx="4" fill="#eaeef2" />
-    <g clip-path="url(#bar)"><rect x="0.0" y="0" width="105.6" height="8" fill="#f1e05a" /><rect x="105.6" y="0" width="52.2" height="8" fill="#F05138" /><rect x="157.8" y="0" width="32.4" height="8" fill="#3572A5" /><rect x="190.2" y="0" width="10.6" height="8" fill="#e34c26" /><rect x="200.8" y="0" width="6.6" height="8" fill="#663399" /></g>
+    <g clip-path="url(#bar)"><rect x="0.0" y="0" width="102.4" height="8" fill="#f1e05a" /><rect x="102.4" y="0" width="54.2" height="8" fill="#F05138" /><rect x="156.6" y="0" width="31.4" height="8" fill="#3572A5" /><rect x="188.0" y="0" width="10.2" height="8" fill="#e34c26" /><rect x="198.2" y="0" width="6.4" height="8" fill="#663399" /></g>
     
     <g transform="translate(0, 30)" class="fade" style="animation-delay:300ms">
       <circle cx="5" cy="-4" r="5" fill="#f1e05a" />
       <text class="label" x="16" y="0">JavaScript</text>
-      <text class="muted" x="210" y="0" text-anchor="end">50.3%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">48.7%</text>
     </g>
     <g transform="translate(0, 52)" class="fade" style="animation-delay:420ms">
       <circle cx="5" cy="-4" r="5" fill="#F05138" />
       <text class="label" x="16" y="0">Swift</text>
-      <text class="muted" x="210" y="0" text-anchor="end">24.9%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">25.8%</text>
     </g>
     <g transform="translate(0, 74)" class="fade" style="animation-delay:540ms">
       <circle cx="5" cy="-4" r="5" fill="#3572A5" />
       <text class="label" x="16" y="0">Python</text>
-      <text class="muted" x="210" y="0" text-anchor="end">15.4%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">14.9%</text>
     </g>
     <g transform="translate(0, 96)" class="fade" style="animation-delay:660ms">
       <circle cx="5" cy="-4" r="5" fill="#e34c26" />
       <text class="label" x="16" y="0">HTML</text>
-      <text class="muted" x="210" y="0" text-anchor="end">5.0%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">4.9%</text>
     </g>
     <g transform="translate(0, 118)" class="fade" style="animation-delay:780ms">
       <circle cx="5" cy="-4" r="5" fill="#663399" />
       <text class="label" x="16" y="0">CSS</text>
-      <text class="muted" x="210" y="0" text-anchor="end">3.1%</text>
+      <text class="muted" x="210" y="0" text-anchor="end">3.0%</text>
     </g>
   </g>
 </svg>
